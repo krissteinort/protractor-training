@@ -1,0 +1,12 @@
+{
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es2015",
+    "removeComments": false,
+    "noLib": false,
+    "types": ["jasmine", "jasminewd2", "selenium-webdriver"],
+    "lib": ["dom", "es2015", "es2017"],
+    "outDir": "./dist/out-tsc",
+    "sourceMap": true
+  }
+}

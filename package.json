@@ -1,0 +1,21 @@
+{
+  "name": "protractortraining",
+  "version": "1.0.0",
+  "description": "Protractor e2e training exercises",
+  "main": "index.js",
+  "author": "Paul Sukow",
+  "license": "ISC",
+  "scripts": {
+    "ng": "ng",
+    "webdriver-update": "webdriver-manager update",
+    "test": "protractor protractor.conf.js"
+  },
+  "devDependencies": {
+    "@types/jasmine": "^3.3.13",
+    "@types/selenium-webdriver": "^4.0.0",
+    "jasmine-console-reporter": "^3.1.0",
+    "protractor": "^5.4.2",
+    "ts-node": "^8.2.0",
+    "typescript": "3.4.5"
+  }
+}
