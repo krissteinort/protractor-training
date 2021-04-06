@@ -19,7 +19,9 @@ exports.config = {
   jasmineNodeOpts: {
     defaultTimeoutInterval: 3 * 60 * 1000
   },
-  specs: ['**/test.scenario.ts'],
+  specs: [
+    '**/exercise-one.scenario.ts'
+  ],
   multiCapabilities: browserCapabilities,
   framework: 'jasmine',
 
