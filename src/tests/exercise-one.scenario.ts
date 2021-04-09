@@ -62,6 +62,7 @@ describe('Exercise One', () => {
       await $('a[title="MK Shop"').isDisplayed()
     ).toEqual(true)
   })
+
   it('should hover over and display the shop menu', async () => {
     await browser.actions().mouseMove($('a[href="./shop/"]')).perform()
     await browser.sleep(3000)
@@ -69,6 +70,7 @@ describe('Exercise One', () => {
       await $('a[href="shop/index.php?l=product_list&c=1"]').isDisplayed()
     ).toEqual(true)
   })
+
   it('should navigate to the mechanical keyboard section', async () => {
     await $('a[href="shop/index.php?l=product_list&c=1"]').click()
     await browser.sleep(2000)
@@ -76,6 +78,7 @@ describe('Exercise One', () => {
       await $('.main-shop').isDisplayed()
     ).toEqual(true)
   })
+
   it('should go to the product detail screen', async () => {
     await $('a[title="Add To Cart"]').click()
     await browser.sleep(2000)
@@ -83,22 +86,24 @@ describe('Exercise One', () => {
       await $('a[title="Add To Cart"]').isDisplayed()
     ).toEqual(true)
    })
+
   it('selects options, increments quantity, and adds to cart', async () => {
     await $('select[name="option[920]"]').click()
     await browser.sleep(500)
+    
     await selectDropdownbyNum($('select[name="option[920]"]'), 4)
     await browser.sleep(500)
-    /*Paul, is there a better way to chain key actions here? */
-    await $('input[name="product[quantity]"').sendKeys(Key.BACK_SPACE)
-    await $('input[name="product[quantity]"').sendKeys('2')
-
+    
+    await $('input[name="product[quantity]"').sendKeys(Key.BACK_SPACE, '2')
     await browser.sleep(500)
+    
     await $('a[title="Add To Cart"]').click()
     await browser.sleep(1000)
     expect(
       await $('.success').isDisplayed()
     ).toEqual(true)
   })
+  
   it('goes to the checkout page', async () => {
     await $('.big_button').click()
     await browser.sleep(2000)
